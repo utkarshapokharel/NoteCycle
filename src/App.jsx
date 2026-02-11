@@ -289,7 +289,7 @@ const NoteCycle = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/logo_note_cycle.png"
+                src="/notecyclelogo.png"
                 alt="Note sharing illustration"
                 className="w-full max-w-lg"
               />
