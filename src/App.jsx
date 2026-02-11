@@ -89,7 +89,7 @@ const NoteCycle = () => {
 
     try {
       if (isSignUp) {
-        const { data, error } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email: authEmail,
           password: authPassword,
         });
@@ -98,7 +98,7 @@ const NoteCycle = () => {
         setAuthEmail('');
         setAuthPassword('');
       } else {
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
           email: authEmail,
           password: authPassword,
         });
@@ -240,10 +240,10 @@ const NoteCycle = () => {
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold text-indigo-900">NoteCycle</h1>
             <nav className="flex gap-8 items-center">
-              <a href="#" onClick={(e) => { e.preventDefault(); setShowAbout(false); setViewingNotes(false); }} className="text-gray-700 hover:text-indigo-700 transition">Home</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setShowAbout(true); }} className="text-gray-700 hover:text-indigo-700 transition">About</a>
+              <button onClick={(e) => { e.preventDefault(); setShowAbout(false); setViewingNotes(false); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">Home</button>
+              <button onClick={(e) => { e.preventDefault(); setShowAbout(true); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">About</button>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRIGQNjFq_AZJg28FkUSHxkUHh6borkJJ2YfX1UeKy_hfNaA/viewform" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-700 transition">Contact</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setViewingNotes(true); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition">Notes</a>
+              <button onClick={(e) => { e.preventDefault(); setViewingNotes(true); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">Notes</button>
               <button 
                 onClick={(e) => { 
                   e.preventDefault();
@@ -289,7 +289,7 @@ const NoteCycle = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/mnt/user-data/uploads/1770075503432_logo_note_cycle.png"
+                src="/logo_note_cycle.png"
                 alt="Note sharing illustration"
                 className="w-full max-w-lg"
               />
@@ -369,10 +369,10 @@ const NoteCycle = () => {
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold text-indigo-900">NoteCycle</h1>
             <nav className="flex gap-8 items-center">
-              <a href="#" onClick={(e) => { e.preventDefault(); setShowAbout(false); setViewingNotes(false); }} className="text-gray-700 hover:text-indigo-700 transition">Home</a>
-              <a href="#" className="text-indigo-900 font-medium">About</a>
+              <button onClick={(e) => { e.preventDefault(); setShowAbout(false); setViewingNotes(false); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">Home</button>
+              <span className="text-indigo-900 font-medium">About</span>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRIGQNjFq_AZJg28FkUSHxkUHh6borkJJ2YfX1UeKy_hfNaA/viewform" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-700 transition">Contact</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setViewingNotes(true); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition">Notes</a>
+              <button onClick={(e) => { e.preventDefault(); setViewingNotes(true); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">Notes</button>
               <div className="flex items-center gap-3">
                 {user ? (
                   <>
@@ -535,10 +535,10 @@ const NoteCycle = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-indigo-900">NoteCycle</h1>
           <nav className="flex gap-8 items-center">
-            <a href="#" onClick={(e) => { e.preventDefault(); setViewingNotes(false); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition">Home</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setShowAbout(true); }} className="text-gray-700 hover:text-indigo-700 transition">About</a>
+            <button onClick={(e) => { e.preventDefault(); setViewingNotes(false); setShowAbout(false); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">Home</button>
+            <button onClick={(e) => { e.preventDefault(); setShowAbout(true); }} className="text-gray-700 hover:text-indigo-700 transition bg-transparent border-none cursor-pointer">About</button>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRIGQNjFq_AZJg28FkUSHxkUHh6borkJJ2YfX1UeKy_hfNaA/viewform" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-700 transition">Contact</a>
-            <a href="#" className="text-indigo-900 font-medium">Notes</a>
+            <span className="text-indigo-900 font-medium">Notes</span>
             <div className="flex items-center gap-3">
               {user ? (
                 <>
