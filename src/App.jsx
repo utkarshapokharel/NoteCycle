@@ -199,7 +199,7 @@ const NoteCycle = () => {
       return;
     }
 
-    if (!confirm('Are you sure you want to delete this note?')) {
+    if (!window.confirm('Are you sure you want to delete this note?')) {
       return;
     }
 
